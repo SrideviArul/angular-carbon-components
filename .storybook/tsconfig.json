@@ -1,0 +1,21 @@
+{
+  "extends": "../projects/ngcc/tsconfig.lib.json",
+  "compilerOptions": {
+    "types": ["node"],
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true
+  },
+  "exclude": [
+    "../projects/ngcc/src/lib/test.ts",
+    "../projects/ngcc/src/lib/**/*.spec.ts",
+    "./main.ts",
+    "node_modules",
+    "dist"
+  ],
+  "include": [
+    "../projects/ngcc/src/lib/**/*.stories.*",
+    "./preview.ts",
+    "./projects/ngcc/src/lib/styles/custom_themes.scss"
+  ],
+  "files": ["./typings.d.ts"]
+}

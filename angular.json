@@ -1,0 +1,76 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "scss"
+    }
+  },
+  "projects": {
+    "ngcc": {
+      "projectType": "library",
+      "root": "projects/ngcc",
+      "sourceRoot": "projects/ngcc/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngcc/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngcc/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/ngcc/tsconfig.spec.json"
+          }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "configDir": "projects/ngcc/.storybook",
+            "browserTarget": "ngcc:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/ngcc"
+            ],
+            "port": 6006,
+            "styles": [
+              "projects/ngcc/src/styles/carbon.scss",
+              "@carbon/charts/scss/index.scss"
+            ]
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "configDir": "projects/ngcc/.storybook",
+            "browserTarget": "ngcc:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/ngcc"
+            ],
+            "outputDir": "storybook-static",
+            "styles": [
+              "projects/ngcc/src/styles/carbon.scss",
+              "@carbon/charts/scss/index.scss"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

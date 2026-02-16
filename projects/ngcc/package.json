@@ -1,0 +1,72 @@
+{
+  "name": "@assistanz/ngcc",
+  "version": "1.0.0",
+  "description": "An independent, community-driven Angular component library inspired by the Carbon Design System. NOT affiliated with IBM.",
+  "license": "MIT",
+  "author": "Assistanz",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/assistanz/angular-carbon-components.git"
+  },
+  "homepage": "https://github.com/assistanz/angular-carbon-components",
+  "bugs": {
+    "url": "https://github.com/assistanz/angular-carbon-components/issues"
+  },
+  "keywords": [
+    "angular",
+    "components",
+    "ui-library",
+    "carbon-design",
+    "design-system",
+    "accessibility",
+    "wcag",
+    "standalone-components",
+    "signals"
+  ],
+  "main": "bundles/ngcc.umd.js",
+  "module": "fesm2022/ngcc.mjs",
+  "typings": "index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./fesm2022/ngcc.mjs",
+      "require": "./bundles/ngcc.umd.js"
+    },
+    "./styles": {
+      "style": "./styles/carbon.scss",
+      "default": "./styles/carbon.scss"
+    }
+
+  },
+  "files": [
+    "**/*"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^20.0.0 || ^21.0.0",
+    "@angular/core": "^20.0.0 || ^21.0.0",
+    "@angular/forms": "^20.0.0 || ^21.0.0",
+    "@angular/router": "^20.0.0 || ^21.0.0",
+    "@carbon/styles": "^1.98.0",
+    "@carbon/charts": "^1.27.0"
+  },
+  "peerDependenciesMeta": {
+    "@angular/router": {
+      "optional": true
+    },
+    "@carbon/charts": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "sideEffects": false
+}
