@@ -111,3 +111,11 @@ ng build ngcc
 
 This project uses IBM's Carbon Design System packages under the Apache-2.0 license.
 See [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md) for details.
+
+## PR Steps
+Then to commit and push:
+
+```bash
+git add <filename>
+git commit -m "Add a single demo sentence"
+git push origin <branch-name>
